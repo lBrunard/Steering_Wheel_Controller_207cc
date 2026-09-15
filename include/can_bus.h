@@ -2,13 +2,14 @@
 #include "driver/twai.h" //https://docs.espressif.com/projects/esp-idf/en/v4.4.7/esp32/api-reference/peripherals/twai.html#twai-protocol-summary
 
 /**
- * @brief   Installe et démarre le driver TWAI en écoute seule.
- *
- * La configuration (broches, débit, filtre) est privée au module can_bus.
- * En cas d'échec, le driver est laissé désinstallé.
+ * @brief   Install and start TWAI driver on listen Only mode.
+ *  If fails, driver still uninstalled
  *
  * @return
- *      - true  : driver installé et démarré, les trames peuvent être lues
- *      - false : échec, le détail est affiché sur le port série
+ *      - true  : Driver Installed
+ *      - false : Installation Failed
  */
 bool start_twai();
+
+
+bool canReceive(twai_message_t& msg);

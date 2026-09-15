@@ -1,22 +1,22 @@
 #pragma once
 
 /**
- * @brief Configure les broches des optocoupleurs en sortie et les éteint toutes.
- *        À appeler une fois dans setup().
+ * @brief Set the optocoupler pins as outputs and turn them all off.
+ *        Call once from setup().
  */
 void optoInit();
 
 /**
- * @brief Éteint tous les optocoupleurs (aucun bouton appuyé).
+ * @brief Turn every optocoupler off (no button pressed).
  */
 void optoReleaseAll();
 
 /**
- * @brief Allume un seul optocoupleur, les autres sont éteints.
- *        Un seul à la fois : sinon les résistances se retrouvent en parallèle
- *        et l'autoradio lit une valeur qui ne correspond à aucun bouton.
+ * @brief Turn on a single optocoupler, all the others are turned off.
+ *        Only one at a time: otherwise the resistors end up in parallel
+ *        and the head unit reads a value matching no button.
  *
- * @param state true = appuyé, false = relâché
- * @param pin   broche de l'opto (PIN_VOL_PLUS, PIN_VOL_MINUS…)
+ * @param state true = pressed, false = released
+ * @param pin   optocoupler pin (PIN_VOL_PLUS, PIN_VOL_MINUS...)
  */
 void optoPress(bool state, int pin);
